@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Todo アプリ">
+      <header class="app__header">
+        <h1 class="app__title">Todo</h1>
+      </header>
+
+      <form id="todo-form" class="add-todo" autocomplete="off">
+        <input
+          id="todo-input"
+          class="add-todo__input"
+          type="text"
+          placeholder="やることを追加…"
+          aria-label="新しい Todo"
+          maxlength="300"
+        />
+        <button class="add-todo__button" type="submit">追加</button>
+      </form>
+
+      <nav class="filters" aria-label="フィルター">
+        <button class="filters__btn filters__btn--active" data-filter="all" type="button">
+          すべて
+        </button>
+        <button class="filters__btn" data-filter="active" type="button">
+          未完了
+        </button>
+        <button class="filters__btn" data-filter="completed" type="button">
+          完了
+        </button>
+      </nav>
+
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span aria-hidden="true">📝</span>
+        <p>まだ Todo がありません</p>
+      </div>
+
+      <footer class="app__footer">
+        <span id="todo-counter" class="app__counter">0 / 0</span>
+        <button
+          id="clear-completed"
+          class="app__clear"
+          type="button"
+          hidden
+        >
+          完了した Todo を削除
+        </button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
